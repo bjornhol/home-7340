@@ -43,5 +43,12 @@ namespace Home7340.Controllers
 
             return Content("done");
         }
+
+        public ActionResult Image(string name)
+        {
+            var images = HostingEnvironment.MapPath("~/Content/Uploads/Images");
+            var image = Path.Combine(images, name);
+            return File(image, "image/jpg");
+        }
     }
 }
